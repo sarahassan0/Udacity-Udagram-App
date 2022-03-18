@@ -12,18 +12,30 @@ jobs:
       - aws-cli/setup
       - eb/setup
       - run:
-          name: Front-End Install
+          name: install the dependencies
           command: |
-            npm run frontend:install
+            npm run install
       - run:
-          name: Back-End Install
+          name: Build the project
           command: |
-            npm run backend:install
+            npm run build
       - run:
-          name: Front-End Build
+          name: Running the project test
           command: |
-            npm run frontend:build
+            npm run test
       - run:
-          name: Back-End Build
+          name: setting eb enviroment variables
           command: |
-            npm run backend:build
+            eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_DB=$POSTGRES_DB POSTGRES_HOST=$POSTGRES_HOST JWT_SECRET=$JWT_SECRET
+      - run:
+          name: Deploying the project
+          command: |
+            npm run deploy
+workflows:
+  build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - main
