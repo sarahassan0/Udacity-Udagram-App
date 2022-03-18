@@ -9,7 +9,7 @@
     "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
-    "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && 7z -r a Archive.zip folder . && cd ..",
+    "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\"",
     "deploy": "eb use udagram && eb deploy udagram"
   },
@@ -29,6 +29,7 @@
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.7.1",
+    "rar": "^0.0.0",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^5.21.4",
     "sequelize-typescript": "^0.6.9",
