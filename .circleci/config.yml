@@ -26,9 +26,9 @@ jobs:
           command: |
             npm run test
       - run:
-          name: Using eb application
+          name: Initializate eb application
           command: |
-            npm run eb:use
+            npm run eb:init
       - run:
           name: Setting eb enviroment variables
           command: |
