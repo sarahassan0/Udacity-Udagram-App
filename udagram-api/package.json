@@ -11,7 +11,8 @@
     "clean": "rm -rf www/ || true",
     "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\"",
-    "deploy": "eb init --platform node.js --region us-east-1 && eb use udagram && eb deploy udagram"
+    "eb:use": "eb init --platform node.js --region us-east-1 && eb use udagram",
+    "deploy": "eb deploy udagram"
   },
   "keywords": [],
   "author": "Gabriel Ruttner",

@@ -26,13 +26,17 @@ jobs:
           command: |
             npm run test
       - run:
-          name: Deploying the project
+          name: Useing eb application
           command: |
-            npm run deploy
+            npm run eb:use
       - run:
           name: Setting eb enviroment variables
           command: |
             eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_DB=$POSTGRES_DB POSTGRES_HOST=$POSTGRES_HOST JWT_SECRET=$JWT_SECRET
+      - run:
+          name: Deploying the project
+          command: |
+            npm run deploy
 workflows:
   build:
     jobs:
