@@ -1,0 +1,28 @@
+{
+  "name": "my-udagram-application",
+  "version": "1.0.0",
+  "description": "This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm run install:frontend && npm run install:backend",
+    "build": "npm run build:frontend && npm run build:backend",
+    "test": "npm run test:frontend && npm run test:backend",
+    "deploy": "npm run deploy:frontend && npm run deploy:backend",
+
+    "install:frontend": "cd udagram-frontend && npm install && cd ..",
+    "install:backend": "cd udagram-api && npm install && cd ..",
+
+    "build:frontend": "cd udagram-frontend && npm run build && cd ..",
+    "build:backend": "cd udagram-api && npm run build && cd ..",
+
+    "test:frontend": "cd udagram-frontend && npm test && cd ..",
+    "test:backend": "cd udagram-api && npm test && cd ..", 
+
+    "deploy:frontend": "cd udagram-frontend && npm run deploy && cd ..",
+    "deploy:backend": "cd udagram-api && npm run deploy && cd .."
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
