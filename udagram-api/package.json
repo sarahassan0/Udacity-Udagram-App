@@ -9,7 +9,7 @@
     "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
-    "build": "npm run clean && tsc && cp package.json www/package.json && cd www && zip -r Archive.zip .&& cd ..",
+    "build": "npm run clean && tsc && cp package.json www/package.json && cd www && zip -r Archive.zip .",
     "test": "echo \"Error: no test specified\"",
     "deploy": "eb deploy udagram"
   },
