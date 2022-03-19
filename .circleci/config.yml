@@ -26,10 +26,6 @@ jobs:
           command: |
             npm run test
       - run:
-          name: Initializate eb application
-          command: |
-            npm run eb:init
-      - run:
           name: Deploying the project
           command: |
             npm run deploy
