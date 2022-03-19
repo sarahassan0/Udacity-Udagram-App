@@ -33,11 +33,6 @@ jobs:
           name: Deploying the project
           command: |
             npm run deploy
-      - run:
-          name: Setting eb enviroment variables
-          command: |
-            eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_DB=$POSTGRES_DB POSTGRES_HOST=$POSTGRES_HOST JWT_SECRET=$JWT_SECRET AWS_BUCKET=$AWS_BUCKET
-
 workflows:
   build:
     jobs:
